@@ -7,15 +7,13 @@ class Button extends React.Component {
     static contextType = LanguageContext;
     render() {
         const lang = this.context === 'english' ? 'Submit' : this.context === 'romana' ? 'Trimite' : 'Afsend'
+
         return (
             <div>
                 <ColorContext.Consumer>
                     {color =>
                         <button className={`ui button ${color}`}>
                             {lang}
-                            {/* <LanguageContext.Consumer>
-                                {lang => lang === 'english' ? 'Submit' : lang === 'romana' ? 'Trimite' : 'Afsend'}
-                            </LanguageContext.Consumer> */}
                         </button>
                     }
                 </ColorContext.Consumer>
